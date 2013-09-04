@@ -5,7 +5,7 @@ module ShortCircuit
     delegate :url_helpers, to: 'Rails.application.routes'
 
     def initialize(presentable_object)
-      instance_variable_set("@#{presentable_object.class.to_s.downcase}", presentable_object)
+      instance_variable_set("@#{presentable_object.class.to_s.underscore}", presentable_object)
       super(presentable_object)
     end
 
